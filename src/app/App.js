@@ -1,11 +1,24 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Routes, Route } from "react-router-dom";
+
+import { AppLayout } from './components';
+
+import HomePage from 'pages/home';
 
 function App() {
   return (
-    <div>
-      <Button>Test antd</Button>
-    </div>
+    <AppLayout
+      navbar={
+        'Navigation menu'
+      }
+      sidebar={'Sidebar'}
+      footer={'Footer'}
+      content={
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      }
+    />
   );
 }
 
